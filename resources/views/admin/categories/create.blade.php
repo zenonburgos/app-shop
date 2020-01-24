@@ -13,7 +13,7 @@
     <div class="container">
 
         <div class="section">
-            <h2 class="title  text-center">Registrar nuevo producto</h2>
+            <h2 class="title  text-center">Registrar nueva categoría</h2>
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -25,50 +25,23 @@
                 </div>
             @endif
 
-            <form method="post" action="{{ url('/admin/products') }}">
+            <form method="post" action="{{ url('/admin/categories') }}">
                 @csrf
                 
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group label-floating">
-                            <label class="control-label">Nombre del producto</label>
+                            <label class="control-label">Nombre de la categoría</label>
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
-                        <div class="form-group label-floating">
-                            <label class="control-label">Precio del producto</label>
-                            <input type="number" class="form-control" name="price" value="{{ old('price') }}">
-                        </div> 
-                    </div>
                 </div>
+              
+                <textarea class="form-control" placeholder="Descripción de la categoría" rows="5" name="description">{{ old('long_description') }}</textarea>
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group label-floating">
-                            <label class="control-label">Descripción corta</label>
-                            <input type="text" class="form-control" name="description" value="{{ old('description') }}">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="form-group label-floating">
-                            <label class="control-label">Categoría del producto</label>
-                            <select class="form-control" name="category_id">
-                                <option value="1">General</option>
-                                @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <textarea class="form-control" placeholder="Descripción detallada" rows="5" name="long_description">{{ old('long_description') }}</textarea>
-
-                <button class="btn btn-primary">Registrar producto</button>
-                <a href="{{ url('/admin/products') }}" class="btn btn-default">Cancelar</a>
+                <button class="btn btn-primary">Registrar categoría</button>
+                <a href="{{ url('/admin/categories') }}" class="btn btn-default">Cancelar</a>
 
             </form>
 
