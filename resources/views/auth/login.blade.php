@@ -29,17 +29,17 @@
 
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    <i class="material-icons">email</i>
+                                    <i class="material-icons">fingerprint</i>
                                 </span>
 
-                                <input id="email" type="email" placeholder="Email..." class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="username" type="text" placeholder="Username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('email') }}" required autocomplete="username" autofocus>
                             </div>
 
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <i class="material-icons">lock_outline</i>
                                 </span>
-                                <input type="password" placeholder="Password..." <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"/>
+                                <input type="password" placeholder="Contraseña" <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"/>
                             </div>
 
                             <!-- If you want to add a checkbox to this form, uncomment this code -->
